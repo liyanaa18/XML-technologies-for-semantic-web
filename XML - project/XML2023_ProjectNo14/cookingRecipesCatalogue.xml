@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE cookingRecipesCatalogue [
+	<!NOTATION JPEG SYSTEM "image/jpeg">
+	<!ENTITY shopska-salata SYSTEM "./images/shopska-salata.jpg" NDATA JPEG>
+	<!ENTITY zelnik SYSTEM "./images/zelnik.jpg" NDATA JPEG>
+	<!ENTITY sour-cabbage SYSTEM "./images/sour-cabbage.jpg" NDATA JPEG>
+	<!ENTITY patatnik SYSTEM "./images/patatnik.jpg" NDATA JPEG>
+	<!ENTITY bel-muj SYSTEM "./images/bel-muj.jpg" NDATA JPEG>
+	<!ENTITY banitsa SYSTEM "./images/banitsa.jpg" NDATA JPEG>
+	<!ENTITY lutika SYSTEM "./images/lutika.jpg" NDATA JPEG>
+]>
+
+<?xml-stylesheet type="text/xsl" href="cookingRecipesCatalogue.xsl"?>
+
+<cookingRecipesCatalogue xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="recipesSchema.xsd">
+	<regions>
+		<region ID="1" title="Югозападен"/>
+		<region ID="2" title="Южен Централен"/>
+		<region ID="3" title="Северозападен"/>
+	</regions>
+	
+	<techniquesList>
+		<technique name = "Варене">
+			<description>Варенето представлява равномерно нагряване на хранителните продукти до състояние на 
+			кулинарна готовност при пълно потапяне в течност (вода, бульон, мляко, захарен сироп) или среда, 
+			наситена с водна пара.</description>
+		</technique>
+		
+		<technique name = "Пържене">
+			<description>Процес, при който хранителните продукти се довеждат до състояние на готовност чрез нагряване в мазнина с температура 150-190С, 
+			като се получава специфична коричка по повърхността на продукта.</description>
+		</technique>
+		
+		<technique name = "Печене">
+			<description>Процес, при който хранителните продукти 
+			се нагряват с горещ въздух (100-300 С) или с лъчиста енергия. </description>
+		</technique>
+		
+		<technique name = "Задушаване">
+			<description>Процес, при който продуктите се нагряват в собствен сок или в малко количество течност до състояние на кулинарна готовност.</description>
+		</technique>
+	</techniquesList>
+	
+	<mealList> 
+		<meal type="10" title = "Предястие"/>
+		<meal type="11" title = "Основно"/>  
+		<meal type="12" title = "Десерт"/> 
+	</mealList>
+
+	<recipes>
+		<recipe ID="1000" regionRef="1">
+			<name>Шопска салата</name>
+			<image source="shopska-salata" />
+			<author>Зорица</author>
+			<kitchen>Вегетарианска</kitchen> 
+			<meal typeRef="10" />	
+			<ingredients>
+				<list>
+					<product quantity = "400гр">домати</product>
+					<product quantity = "250гр">краставици</product>
+					<product quantity = "1 бр.">зелени печени чушки</product>
+					<product quantity = "1 глава">кромид лук</product>
+					<product quantity = "200 г">краве сирене</product>
+					<product quantity = "1/2 връзка">наситнен магданоз</product>
+					<product>оцет</product>
+					<product>олио</product>
+					<product>сол</product>
+					<product>маслини</product>
+					<product>зелени чушки - за украса</product>
+					<product quantity = "няколко стръкчета за гарниране">магданоз</product>
+				</list>
+			</ingredients>
+			<cookingTime>10</cookingTime>
+			<process>
+				<step>Доматите се нарязват на кубчета.</step>
+				<step>Краставиците се обелват и нарязват на кръгчета или полумесеци.</step>
+				<step>Чушката се нарязва на лентички.</step>
+				<step>Лукът и магданоза се наситняват.</step>
+				<step>Всичко се прехвърля в купа и посолява със сол, оцет и олио на вкус.</step>
+				<step>Разбърква се и салатата се разпределя в чинии, като се оформя на купчинка.</step>
+				<step>Отгоре се поръсва обилно с настърганото краве сирене.</step>
+				<step>Украсява се с маслина, зелена чушка и клончета магданоз.</step>
+			</process>
+			<servingMethod>
+				Сервира се студена, аранжирана с маслини и стръкче магданоз.
+			</servingMethod>
+			<matchDrinks>
+				<drink>българска ракия</drink>
+				<drink>вино Червен мискет</drink>
+				<drink>вино Блан де ноар</drink>
+			</matchDrinks>
+			<medicalParameters>
+				<descriptionMedicalParameters>Калиевите соли в домата помагат на сърцето и са безценни при анемия и заради пурините,които имат се препоръчват при артрит и атеросклероза. 
+				Помагат още при песъчинки в бъбреците, полезни са за стомаха и влияят добре на диабетиците. 
+				При грип и инфекции лукът е сред задължителните лекарства, напомнят диетолозите. 
+				Освен, че сваля холестерола и помага при атеросклероза, стимулира и стомаха - възбужда апетита, засилва отделянето на храносмилателни сокове 
+				и помага за по-доброто усвояване на хранителните вещества. </descriptionMedicalParameters>
+			</medicalParameters>
+		</recipe>
+		
+		<recipe ID="1001" regionRef="1">
+			<name>Традиционен зелник</name>
+			<image source="zelnik" />
+			<origin> Кюстендилският край</origin>
+			<author>Ники</author>
+			<kitchen>Вегетарианска</kitchen>
+			<meal typeRef = "11"></meal>
+			<ingredients>
+				<list>
+					<product quantity = "350 гр">брашно</product>
+					<product quantity = "100 гр">масло</product>
+					<product quantity = "3 бр.">яйца</product>
+					<product quantity = "500 гр">кисело мляко</product>
+					<product quantity = "1 ч.л. ">сода</product>
+					<product quantity = "1 ч.л. ">сол</product>
+					<product quantity = "1/2 ч.л. ">захар</product>
+			
+					<product>копър</product>
+					<product>черен пипер</product>
+					<product quantity = "500 гр">зеле</product>
+					<product quantity = "1 бр.">лук</product>
+					<product>сол</product>
+					<product>чили - по желание</product>
+				</list>
+			</ingredients>
+			<cookingTime>80</cookingTime>
+			<process>
+				<step>Нарязваме си зелето и лука на ситно. </step>
+				<step>В дълбок тиган задушаваме първо лука, след това добавяме зелето. </step>
+				<step>Добавяме солта, черния пипер и за обичащите пикантно може да добавите сухо, едро чили. </step>
+				<step>Задушаваме зелето до прозрачност.</step>
+				<step>Добавяме нарязания на ситно копър.</step>
+				<step>В купа си разбиваме яйцата със солта и захарта.</step>
+				<step>Добавяме разтопеното масло и киселото мляко.</step>
+				<step>Накрая добавяме пресятото брашно със содата.</step>
+				<step>Разбъркваме добре, тестото трябва да се получи като гъста заквасена сметана. </step>
+				<step>В тава си слагаме хартия за печене, намазняваме и сипваме част от тестото, след това 
+					плънката и отгоре пак тесто, също така може да смесим тестото с плънката и да добавим сместа в тавата. 
+				</step>
+				<step>Печем зелника на 180 градуса</step>
+			</process>	
+
+			<techniques>
+				<technique techniqueRef="Задушаване" />
+				<technique techniqueRef="Печене" />
+			</techniques>
+
+			<servingMethod>
+				Зелникът се сервира топъл и нарязан на триъгълни парчета
+			</servingMethod>
+			<matchDrinks>
+				<drink>бира</drink>
+				<drink>айрян</drink>
+			</matchDrinks>
+			<medicalParameters>
+				<descriptionMedicalParameters>Зелето има благоприятен ефект върху храносмилателната система, стимулира метаболизма, нежно почиства организма, 
+				премахва токсините и холестерола. Зелето е от съществено значение по време на бременност. 
+				То помага за премахване на излишни течности от тялото и премахване на отоци, което е важно за много бъдещи майки през последното тримесечие.</descriptionMedicalParameters>
+			</medicalParameters>
+		</recipe>
+		
+		<recipe ID="1002" regionRef="1">
+			<name>Вариво с кисело зеле</name>
+			<image source="sour-cabbage" />
+			<origin>Пернишки край</origin>
+			<author>Гергана Георгиева</author>
+			<kitchen>Месна</kitchen>
+			<meal typeRef = "11"></meal>
+			<ingredients>
+				<list>
+					<product quantity = "1 голяма зелка">кисело зеле</product>
+					<product quantity = "800 гр">свинско месо</product>
+					<product quantity = "200 гр">бекон</product> 
+					<product quantity = "1 пълна с.л.">свинска мас</product>
+					<product quantity = "5 с.л.">олио</product>
+					<product quantity = "1 с.л.">червен пипер</product>
+					<product>сол</product>
+					<product quantity = "1 глава">чесън</product>
+					<product>вода</product>
+				</list>
+			</ingredients>
+			<cookingTime>210</cookingTime>
+			<process> 
+				<step>Нарязваме зелето на парченца. Нарязваме и месото на късчета, а бекона на дребничко.</step>
+				<step>Подреждаме в дълбока тенджера един пласт зеле, след това слагаме месото и бекона, и покриваме с останалото зеле.</step>
+				<step>Слагаме свинската мас, олиото, червения пипер, сол ако е необходимо.</step>
+				<step>Почистваме една глава чесън от външната люспа и коренчетата, измиваме я и я пъхаме в зелето.</step>
+				<step>Заливаме съдържанието в тенджерата с топла вода, захлупваме с капак и слагаме да се вари около два часа и половина, като от време на време разбъркваме.</step> 
+				<step>Когато вече е готово, изваждаме чесъна.</step>
+			</process>
+
+			<techniques>
+				<technique techniqueRef="Варене" />
+			</techniques>
+
+			<servingMethod>
+				Варивото с кисело зеле се сервира топъл.
+			</servingMethod>
+
+			<matchDrinks>
+				<drink>вино</drink>
+				<drink>греяната ракия</drink>
+			</matchDrinks>
+
+			<medicalParameters>
+				<descriptionMedicalParameters>Чесънът може да намали кръвното налягане и риска от развитието на рак на дебелото черво. 
+				Ефективен е срещу гъбички, може да прочисти натрупванията в артериите и помага за контрола върху астмата. Също така се бори с настинки. 
+				Киселото зеле подобрява работата на стомашно-чревния тракт, нормализира храносмилането, понижава нивото на холестерола в организма и подобрява 
+				работата на сърдечно съдовата система. В него се съдържа витамин U, който прекрасно помага за справяне със зимната депресия, възстановява нервната система и 
+				повишава устойчивостта на стрес. В сравнение с останалите видове месо, свинското е сред онези, които са особено богати на протеини. 
+				А маста и сланината от прасето съдържат арахидонова киселина и селен, които ни предпазват от депресия и способстват за обновяването на клетките ни. 
+				Свинското е изключително богато на витамини от В групата, и то в значително по-големи количества в сравнение с останалите меса. 
+				Препоръчва се дори на кърмачките, защото способства за изработката на кърма. Особено препоръчителни за тях са свинските крачета.</descriptionMedicalParameters>
+			</medicalParameters>
+		</recipe>
+		
+		<recipe ID="1003" regionRef="2">
+			<name>Пататник</name>
+			<image source="patatnik" />
+			<origin>Родопите</origin>
+			<author>Екатерина Дафовска</author>
+			<kitchen>Вегетарианска</kitchen>
+			<meal typeRef = "11"></meal>
+			<ingredients>
+				<list>
+					<product quantity = "1 кг.">картоф</product>
+					<product quantity = "200 гр.">сирене</product>
+					<product quantity = "2 бр.">яйца</product>
+					<product quantity = "50 гр">масло</product>
+					<product quantity = "1 ч.л.">сол</product>
+					<product quantity = "10 с.л.">олио</product>
+				</list>
+			</ingredients>
+			<cookingTime>30</cookingTime>
+			<process> 
+				<step>Картофите се измиват и обелват.</step> 
+				<step>Настъргват се на едро ренде. Слагат се в сито и поръсват със солта.</step>  
+				<step>С ръце се притискат добре за да се отцеди водата им.</step>  
+				<step>Тогава се слагат в купа.</step>  
+				<step>Добавя се едро натрошено сирене и яйца.</step>  
+				<step>Размесва се добре.</step>  
+				<step>В дълбок тиган се загрява половината олио и сместа се слага да се пържи.</step>  
+				<step>На слаб огън се оставя за 10 минути.</step>  
+				<step>Тогава се слага чиния върху нея се обръща пататника.</step>  
+				<step>Така суровата част от него се слага в същия тиган, като се налива и останалото олио.</step>  
+				<step>Пърженето продължава на слаб огън за още 10 минути като се намазва с маслото.</step> 
+			</process>	
+
+			<techniques>
+				<technique techniqueRef="Пържене" />
+			</techniques>
+
+			<servingMethod>
+				Пататникът се сервира топъл или охладен и най-често с кисело мляко.
+			</servingMethod>
+
+			<matchDrinks>
+				<drink>червено вино</drink>
+				<drink>компот</drink>
+				<drink>бира</drink>
+			</matchDrinks>
+
+			<medicalParameters>
+				<descriptionMedicalParameters>C кapтoфи мoжe дa пoддъpжaтe нopмaлни гpaницитe нa кpъвнaтa зaxap, зaтoвa ca пpeдпoчитaни oт диaбeтицитe кaтo изтoчник нa въглexидpaти. 
+				Картофите са полезни при лечението на сърдечни заболявания, високо кръвно налягане и инсулт. 
+				Те са богати на калий - минерал, регулиращ сърдечната дейност и кръвното налягане. 
+				Американски лекари препоръчват картофи за пречистване на кръвта, против язва и гастрит. 
+				Картофите са изключително полезни за мозъка и нервната система.</descriptionMedicalParameters>
+			</medicalParameters>
+		</recipe>
+		
+		<recipe ID="1004" regionRef="3">
+			<name>Бел муж</name>
+			<image source="bel-muj" />
+			<origin>гр. Чипровци</origin>
+			<author>Нина Иванова</author>
+			<kitchen>Вегетарианска</kitchen>
+			<meal typeRef = "12"></meal>
+			<ingredients>
+				<list>
+					<product quantity = "150 гp">брашно</product>
+					<product quantity = "400 гp">овче сирене</product>
+					<product quantity = "500 гp">прясно мляко</product>
+					<product quantity = "30 мл">олио</product>
+				</list>
+			</ingredients>
+			<cookingTime>35</cookingTime>
+			<process> 
+				<step>Предварително натрошете сиренето.</step> 
+				<step>Загрейте олиото в дълбок тиган на котлона на умерена температура.</step> 
+				<step>Запържете брашното, като разбърквате постоянно до златисто или около 5 мин.</step> 
+				<step>Добавете натрошеното сирене и разбъркайте.</step> 
+				<step>Като поомекне, добавете прясното мляко на тънка струя и бъркайте ястието, подобно на качамак,докато се получи хомогенна и гъста смес.</step>
+			</process>
+
+			<techniques>
+				<technique techniqueRef="Пържене" />
+			</techniques>
+			
+			<servingMethod>
+				Може да сервирате с мед, петмез или любимото ви сладко като десерт на празничната трапеза за Петровден. 
+				Можете да консумирате веднага след направата му.
+			</servingMethod>
+
+			<matchDrinks>
+				<drink>ликьор</drink>
+				<drink>коктейл</drink>
+			</matchDrinks>
+
+			<medicalParameters>
+				<descriptionMedicalParameters>Пълноценното прясно мляко се прилага в лечебното хранене при гастрити и язвена болест на стомаха, при сърдечно-съдови заболявания, 
+				туберкулоза, възпалителни процеси и др. Противопоказно е при ентеро колити, гастрити с понижена киселинност на стомашния сок, хранителни алергии и други заболявания. 
+				Сиренето действа възбуждащо върху нервната система (при зреенето му се образуват вещества, които стимулират симпатикусовия дял на вегетативната нервна система), 
+				поради което консумацията му преди сън не се препоръчва.</descriptionMedicalParameters>
+			</medicalParameters>
+		</recipe>
+		
+		<recipe ID="1005" regionRef="3">
+			<name>Чипровска баница</name>
+			<image source="banitsa" />
+			<origin>гр. Чипровци</origin>
+			<author>Efrosia</author>
+			<kitchen>Вегетарианска</kitchen>
+			<meal typeRef = "10"></meal>
+			<ingredients>
+				<list>
+					<product quantity = "1 опаковка">кори</product>
+					<product quantity = "300 гp">краве или овче сирене</product>
+					<product quantity = "6 бр.">яйца</product>
+					<product quantity = "1 ч.ч.">олио</product>
+					<product quantity = "1 ч.ч.">газирана вода или лимонада</product>
+					<product quantity = "1 щипка">сода бикарбонат</product>
+					<product quantity = "1 щипка">сол</product>
+				</list>
+			</ingredients>
+			<cookingTime>45</cookingTime>
+			<process>
+				<step>В подходящ съд смесваме разбитите яйца, натрошеното сирене, олиото и газираната вода. </step>
+				<step>В дълбока тава с хладка вода слагаме по 1 щипка сода и сол, в нея се потапя всяка една от корите, отцежда се и се слага в намаслена тава за печене.</step> 
+				<step>Върху всяка кора разстиламе по 3-4 с.л. от сместа и така до изчерпване.</step> 
+				<step>Пече се в предварително загрята фурна на 200 градуса до зачервяване.</step>
+			</process>
+
+			<techniques>
+				<technique techniqueRef="Печене" />
+			</techniques>				
+
+			<servingMethod>
+				Сервира се топла с кисело мляко, плодове, мед, конфитюр, компот, нектар пожелание.
+			</servingMethod>
+
+			<matchDrinks>
+				<drink>бира</drink>
+				<drink>айрян</drink>
+				<drink>греяната ракия</drink>
+			</matchDrinks>
+
+			<medicalParameters>
+				<descriptionMedicalParameters>Яйцата съдържат лутеин и зеаксантин – антиоксиданти, които са полезни за здравето на очите. 
+				Те играят спомагателна роля в превенцията на остеопорозата, заедно с млечните продукти, които са нашият основен източник на калций.</descriptionMedicalParameters>
+			</medicalParameters>
+		</recipe>
+		
+		<recipe ID="1006" regionRef="3">
+			<name>Лютика</name>
+			<image source="lutika" />
+			<origin>Врачански край</origin>
+			<author>Мариела Христова</author>
+			<kitchen>Вегетарианска</kitchen>
+			<meal typeRef = "10"></meal>
+			<ingredients>
+				<list>
+					<product quantity = "8 бр.">печени червени чушки</product>
+					<product quantity = "4 бр.">домати(настъргани на ренде)</product>
+					<product quantity = "1 глава">лук</product>
+					<product quantity = "3 скилидки">чесън</product>
+					<product>пресен магданоз</product>
+					<product>сол</product>
+					<product>олио</product>
+				</list>
+			</ingredients>
+			<cookingTime>25</cookingTime>
+			<process>
+				<step>Лукът и чесънът се обелват и нарязват на ситно като се счукват с малко сол.</step> 
+				<step>Прибавя се печения пипер, нарязан на дребно и настърганите домати.</step>  
+				<step>Овкусяват се със сол, олио и пресен магданоз.</step> 
+				<step>Сместа се разбърква добре и се оставя да престои 1 час, за да получи приятен вкус и се сервира.</step> 
+			</process>
+			<servingMethod>
+				Лютиката се сервира охладена.
+			</servingMethod>
+			<matchDrinks>
+				<drink>леки коктейли</drink>
+				<drink>вино</drink>
+			</matchDrinks>
+			<medicalParameters>
+				<descriptionMedicalParameters>Чесънът може да намали кръвното налягане и риска от развитието на рак на дебелото черво. 
+				Ефективен е срещу гъбички, може да прочисти натрупванията в артериите и помага за контрола върху астмата. Също така се бори с настинки. 
+				Лукът помага за здравето на сърцето, може да увеличи плътността на костите и да засили храносмилателното здраве. 
+				Чушките подобряват очното здраве, действат благоприятно при възпалителни състояния и артрит, особено полезни са при анемия, понижават опасността от рак, 
+				подкрепят сърдечно-съдовото здраве, подобряват вида и състоянието на кожата, балансират настроението и подпомагат съня.</descriptionMedicalParameters>
+			</medicalParameters>
+		</recipe>
+	</recipes>
+</cookingRecipesCatalogue>

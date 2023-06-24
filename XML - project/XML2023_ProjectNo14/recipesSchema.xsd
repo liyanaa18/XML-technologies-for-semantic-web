@@ -1,0 +1,263 @@
+<?xml version="1.0"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+targetNamespace="https://www.w3schools.com"
+xmlns="https://www.w3schools.com"
+elementFormDefault="qualified">
+
+    <xs:element name="cookingRecipesCatalogue">
+        <xs:complexType>
+    		<xs:sequence>
+    			<xs:element ref="regions" />
+    			<xs:element ref="techniquesList" />
+                <xs:element ref="mealList"/>
+                <xs:element ref="recipes"/>
+    		</xs:sequence>
+    	</xs:complexType>
+         
+         
+        <xs:key name="mealKey">
+     		<xs:selector xpath="cookingRecipesCatalogue/mealList/meal"/>
+     		<xs:field xpath="@type"/>
+        </xs:key>
+    
+        <xs:keyref name="mealRefToKey" refer="mealKey">
+            <xs:selector xpath="cookingRecipesCatalogue/recipes/recipe/meal"/>
+            <xs:field xpath="@typeRef"/>
+        </xs:keyref>
+        
+        
+        
+        <xs:key name="regionKey">
+     		<xs:selector xpath="cookingRecipesCatalogue/regions/region"/>
+     		<xs:field xpath="@ID"/>
+        </xs:key>
+    
+        <xs:keyref name="regionRefToKey" refer="regionKey">
+            <xs:selector xpath="cookingRecipesCatalogue/recipes/recipe"/>
+            <xs:field xpath="@regionRef"/>
+        </xs:keyref>
+        
+        
+        <xs:key name="techniqueKey">
+     		<xs:selector xpath="cookingRecipesCatalogue/techniquesList/technique"/>
+     		<xs:field xpath="@name"/>
+        </xs:key>
+    
+        <xs:keyref name="techniqueRefToKey" refer="techniqueKey">
+            <xs:selector xpath="cookingRecipesCatalogue/recipes/recipe/techniques/technique"/>
+            <xs:field xpath="@techniqueRef"/>
+        </xs:keyref>
+        
+    </xs:element>
+    
+    <xs:element name="recipes">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element ref="recipe" maxOccurs="unbounded" minOccurs="0"/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+      
+    <xs:element name="recipe">
+        <xs:complexType mixed="true">
+        	<xs:sequence>
+        		<xs:element ref="name" />
+        		<xs:element ref="image" minOccurs="0"/>
+                <xs:element ref="origin" minOccurs="0"/>   
+        		<xs:element ref="author" />     
+        		<xs:element ref="kitchen" />
+        		<xs:element ref="meal"/>
+        		<xs:element ref="ingredients" />         
+        		<xs:element ref="cookingTime" />
+        		<xs:element ref="process" />
+        		<xs:element ref="techniques" minOccurs='0' />
+        		<xs:element ref="servingMethod" />
+        		<xs:element ref="matchDrinks" />
+        		<xs:element ref="medicalParameters" />
+        	</xs:sequence>
+            <xs:attribute name="regionRef" type="xs:decimal" use='required'/>
+        	<xs:attribute name="ID" type="xs:decimal" use='required'/>
+        </xs:complexType>
+    </xs:element>
+      
+    <xs:element name="name" type="xs:string" />
+    <xs:element name="origin" type="xs:string" />
+    <xs:element name="author" type="xs:string" />
+    <xs:element name="cookingTime" type="xs:decimal" />
+      
+    <xs:element name="image">
+    	<xs:complexType>	
+    		<xs:attribute name="source" type="xs:ENTITY" use='required'/>
+    	</xs:complexType>
+    </xs:element>
+      
+    <xs:element name="kitchen">
+        <xs:simpleType>
+            	<xs:restriction base="xs:string">
+              		<xs:enumeration value="Веган"/>
+                   	<xs:enumeration value="Месна"/>
+                    <xs:enumeration value="Вегетарианска"/>
+            	</xs:restriction>
+          </xs:simpleType>
+    </xs:element>
+    	
+    <xs:element name="meal">
+    	<xs:complexType>
+    		<xs:attribute name="typeRef" type="xs:integer" use='required'/>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="mealRefType">
+          <xs:restriction base="xs:string">
+            	<xs:enumeration value="Предястие"/>
+                <xs:enumeration value="Основно"/>
+                <xs:enumeration value="Десерт"/>
+          </xs:restriction>
+     </xs:simpleType>
+     
+     <xs:element name="ingredients">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element ref="list" />
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+
+    <xs:element name="list">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element ref="product" maxOccurs='unbounded'/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:element name="product">
+    	<xs:complexType mixed="true">
+    		<xs:attribute name="quantity" type="xs:string"/>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:element name="process">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element ref="step" maxOccurs='unbounded'/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:element name="step" type="xs:string" />
+    <xs:element name="servingMethod" type="xs:string" />
+     
+    <xs:element name="matchDrinks">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element ref="drink" maxOccurs='unbounded'/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:element name="drink" type="xs:string" />
+    
+    <xs:element name="medicalParameters">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element ref="descriptionMedicalParameters" />
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:element name="descriptionMedicalParameters" type="xs:string" />
+
+	<xs:element name="techniques">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="technique" maxOccurs='unbounded'>
+				    <xs:complexType>
+					    <xs:attribute name="techniqueRef" type='techniqueRefType' use='required'/>
+				    </xs:complexType>
+			    </xs:element>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    
+    <xs:element name="technique">
+    	<xs:complexType>
+    		<xs:attribute name="techniqueRef" type='techniqueRefType' use='required'/>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:simpleType name="techniqueRefType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Задушаване"/>
+            <xs:enumeration value="Пържене"/>
+            <xs:enumeration value="Печене"/>
+            <xs:enumeration value="Сотиране"/>
+            <xs:enumeration value="Бланширане"/>
+            <xs:enumeration value="Варене"/>
+            <xs:enumeration value="Застройване"/>
+            <xs:enumeration value="Паниране"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    
+    
+    <xs:element name="regions">
+    	<xs:complexType>
+    		<xs:sequence>
+    			<xs:element ref="region" minOccurs='0' maxOccurs='6'/>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+    
+    <xs:element name="region">
+    	<xs:complexType>
+    		<xs:attribute name="ID" type='xs:decimal' use='required'/>
+    		<xs:attribute name="title" type='regionTitleType' use='required'/>
+    	</xs:complexType>
+    </xs:element>    
+    
+	<xs:simpleType name="regionTitleType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Югозападен"/>
+ 			<xs:enumeration value="Южен Централен"/>
+ 			<xs:enumeration value="Северозападен"/>
+			<xs:enumeration value="Югоизточен"/>
+ 			<xs:enumeration value="Североизточен"/>
+			<xs:enumeration value="Северен централен район"/>
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:element name="techniquesList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="technique" minOccurs='0' maxOccurs='8'>
+					<xs:complexType mixed="true">
+						<xs:sequence>
+							<xs:element name="description" type="xs:string" />
+						</xs:sequence>
+						<xs:attribute name="name" type='techniqueRefType' use='required'/>
+					</xs:complexType>
+			    </xs:element>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>
+   
+    
+      
+    <xs:element name="mealList">
+    	<xs:complexType>
+    		<xs:sequence>
+				<xs:element name="meal" maxOccurs="3" minOccurs="0">
+					<xs:complexType>
+    		            <xs:attribute name="type" type="xs:integer" use='required'/>
+                        <xs:attribute name="mealTitle" type="mealRefType" use='required'/>
+    	            </xs:complexType>
+				</xs:element>
+    		</xs:sequence>
+    	</xs:complexType>
+    </xs:element>  	
+
+
+</xs:schema>
